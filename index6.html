@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery | Basics and Events</title>
+    <style>
+        #square{
+            background: #1c2b3c;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <p class="p-one">This is a paragraph</p>
+    <p class="p-two">This is another paragraph</p>        
+    <button id="myBtn">Click</button>
+    <br><br>
+
+    <div id="square">
+    
+    </div>
+    <div id="output">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            /*alert(1);
+            $('p.p-one').hide();
+            $('p').show();
+            
+            $('#myBtn').click(function(){
+                //alert('You click!');
+                $('.p-one').toggle();
+            });
+            
+
+            $('#myBtn').dblclick(function(){
+                //alert('You click!');
+                $('.p-one').toggle();
+            });
+            
+            $('#square').hover(function(){
+                //alert('You click!');
+                $(this).text('Hovering...');
+            }, function(){
+                $(this).text('')
+            });
+            
+            $('#square').mouseenter(function(){
+                $(this).text('Hovering...');
+
+                $(this).mouseout(function(){
+                    $(this).text('');
+                });
+            });
+            
+            $('#square').mousedown(function(){
+                $(this).text('Mouse Down');
+
+                $(this).mouseup(function(){
+                    $(this).text('');
+                });
+            });
+            */
+            $('#square').mousemove(function(event){
+                var msg = "Mouse Position -> ";
+                msg += event.pageX + " " + event.pageY;
+                $('#output').html('<div>'+msg+'</div>');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .green{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2" class="green"></div>
+    <input type="text" name="" id="i1">
+    <br><br>
+    <ul id="list1">
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+    </ul>
+    <br><br>
+    <button id="myBtn">
+        Click
+    </button>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#d1').text('Hello World');
+            $('#d2').html('<h1>Hello World</h1>');
+            $('#i1').val('Hello World');
+            //alert($('#d1').text());
+            $('#d1').attr('class', 'something');
+            $('#d1').removeAttr('class');
+            $('#list1').append('<li>Another item</li>');
+            $('#list1').prepend('<li>First item</li>'); 
+            $('#list1').before('<p>Before list</p>'); 
+            $('#list1').after('<p>After list</p>');
+            //$('#list1').remove();
+            //$('#list1').empty();
+            $('#d1').addClass('red'); 
+            $('#d2').removeClass('green');
+            $('#myBtn').click(function(){
+                $('#d2').toggleClass('green');
+            });
+            $('#d1').css('background', 'pink');
+            $('#d1').width('150').height('50');
+            //$('#d2').replaceWith('<h2>Replaced</h2>');
+            $('li').unwrap();
+            $('#d2').wrap('<div></div>');
+        });
+    </script>
+</body>
+</html>
